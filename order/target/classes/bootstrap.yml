@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: order
+  profiles:
+    active: dev  #拼接整合配置文件
+  cloud:
+    config:
+      uri: http://localhost:8762
+      fail-fast: true

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.klay.mapper.MenuMapper">
+
+    <resultMap id="menuMap" type="Menu">
+        <id column="id" property="id"></id>
+        <result column="name" property="name"></result>
+        <result column="price" property="price"></result>
+        <result column="flavor" property="flavor"></result>
+        <association property="type" select="com.klay.mapper.TypeMapper.findById" column="tid"></association>
+    </resultMap>
+
+    <select id="findById" parameterType="long" resultMap="menuMap">
+        select * from t_menu where id=#{id}
+    </select>
+
+</mapper>

@@ -1,0 +1,19 @@
+server:
+  port: 8020
+spring:
+  application:
+    name: menu
+  datasource:
+    url: jdbc:mysql://localhost:3306/ordersystem?usrUnicode=true&characterEncoding=UTF-8
+    username: root
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+    inttance:
+      perfer-ip-address: true
+mybatis:
+  mapper-locations: classpath:/mapping/*.xml
+  type-aliases-package: com.klay.entity  #提出包名，在xml中的parameterType & resultType可以会直接写实体类
